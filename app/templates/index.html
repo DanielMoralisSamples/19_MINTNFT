@@ -1,0 +1,54 @@
+{% extends "templates/base_template.html" %}
+{% block title %}MINT YOUR FANCY{% endblock %}
+{% block head%}
+{% endblock %}
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Mint NFT</h1>
+      <hr>
+      <div class="mb-3">
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <input id="username" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <input id="useremail" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+          </div>
+        </div>
+          <div>  
+            <button class="btn btn-primary" id="submit" onclick="login();">Connect MetaMask</button>
+          </div>
+      </div>
+      <hr>
+      <div class="mb-3">      
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <input disabled = "true" id="name" type="text" class="form-control" placeholder="NFT Name" aria-label="URL" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <input disabled = "true" id="description" type="text" class="form-control" placeholder="Description" aria-label="URL" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <input type="file" disabled = "true" id="file">
+          </div>
+        </div>
+        <div>  
+          <button disabled = "true" class="btn btn-primary" id="upload" onclick="upload();">Upload and Mint</button>
+        </div>
+        <hr>
+          <div class="input-group mb-3" id="resultSpace">
+          </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+  <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
+{% endblock %}
